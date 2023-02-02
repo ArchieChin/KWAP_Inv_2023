@@ -7,4 +7,5 @@ Created on Sun Apr 10 17:12:22 2022
 
 import streamlit as st
 
-st.title("welcome")
+st.title("KWAP 2023 ESG Game")
+st.header("Achieving long-term sustainable investment outcomes")
