@@ -43,16 +43,17 @@ def compute_score(choice):
     return 10, 10
 
 
-deta = Deta("c0ky03c3_FeGypxDjVhTDCQU96cfUqLkstZLvo6Bb")
-db = deta.Base("database")
-
 st.title("KWAP 2023 Investment Retreat")
 st.subheader("In pursuit of a sustainable portfolio")
 
-with st.form("my_form"):
-    player = st.text_input('Enter your name')
+deta = Deta("c0ky03c3_FeGypxDjVhTDCQU96cfUqLkstZLvo6Bb")
+db = deta.Base("current_question")
+key = "8brqm6kqm281"
 
-    question = "1"
+with st.form("my_form"):
+    question = db.get(key)["question"]
+    st.write(question)
+    player = st.text_input('Enter your name')
     choice = st.radio(
         "What\'s your favorite movie genre",
         ('Comedy', 'Drama', 'Documentary'))
@@ -62,6 +63,8 @@ with st.form("my_form"):
     
     if submitted:
         entry = generate_entry(player=player, question=question, effort=effort, carbon=carbon)
+        deta = Deta("c0ky03c3_FeGypxDjVhTDCQU96cfUqLkstZLvo6Bb")
+        db = deta.Base("database")
         if is_entry_new(entry):
             db.insert(entry)
             requests.post('https://api.powerbi.com/beta/6df17805-dab9-4c30-9af8-58a93885998a/datasets/061561f3-5c67-4a0a-a60a-4bf309306ceb/rows?language=en-gb&disableBranding=1&key=QLBQ6eTNPke9fPMU8C06Vv8IMHcabIos1wzEN1GD7tTSDdZH722Fvz6Pg0Gwd4b5lU0TQRmYqWsaj%2BVvamWGRg%3D%3D', 
