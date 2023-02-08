@@ -91,6 +91,15 @@ def initiate_table(connection):
     # DATABASE_URL=postgresql://<username>:<password>@<globalhost>:26257/<cluster_name>.defaultdb?sslmode=verify-full&sslrootcert=<certs_dir>/<ca.crt>
     # db_uri = os.environ['DATABASE_URL'].replace("postgresql://", "cockroachdb://")
 
+DATABASE_URL = "cockroachdb://arch:f54qpucS7ci4HSm9yZtItg@arch-test1-3423.6xw.cockroachlabs.cloud:26257/defaultdb?sslmode=verify-full"    
+engine = create_engine(DATABASE_URL)
+conn = engine.connect()
+
+res = conn.execute(text("SELECT now()")).fetchall()
+print(res)
+  
+    
+    
 DATABASE_URL = "cockroachdb://arch:f54qpucS7ci4HSm9yZtItg@arch-test1-3423.6xw.cockroachlabs.cloud:26257/defaultdb?sslmode=verify-full&sslrootcert=root.crt"
 # DATABASE_URL = "cockroachdb://arch:f54qpucS7ci4HSm9yZtItg@arch-test1-3423.6xw.cockroachlabs.cloud:26257/defaultdb?sslmode=verify-full"
 db_uri = DATABASE_URL.replace("postgresql://", "cockroachdb://")
