@@ -47,7 +47,7 @@ deta = Deta("c0ky03c3_FeGypxDjVhTDCQU96cfUqLkstZLvo6Bb")
 db = deta.Base("database")
 
 with st.form("my_form"):
-    player = form.text_input('Enter your name')
+    player = st.text_input('Enter your name')
 
     question = "1"
     choice = st.radio(
@@ -55,9 +55,9 @@ with st.form("my_form"):
         ('Comedy', 'Drama', 'Documentary'))
 
     effort, carbon = compute_score(choice)
-    submit = form.form_submit_button('Submit')
+    submitted = st.form_submit_button("Submit")
     
-    if submit:
+    if submitted:
         entry = generate_entry(player=player, question=question, effort=effort, carbon=carbon)
         if is_entry_new(entry):
             db.insert(entry)
