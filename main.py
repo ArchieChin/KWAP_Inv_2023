@@ -102,7 +102,9 @@ except Exception as e:
 
 # initiate_table(engine.connect())
 
-st.title('Uber pickups in NYC')
+st.title("KWAP 2023 ESG Game")
+st.subheader("Achieving long-term sustainable investment outcomes")
+
 if st.button("Click"):
     seen_account_ids = []
 
