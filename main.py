@@ -91,7 +91,7 @@ def initiate_table(connection):
     # DATABASE_URL=postgresql://<username>:<password>@<globalhost>:26257/<cluster_name>.defaultdb?sslmode=verify-full&sslrootcert=<certs_dir>/<ca.crt>
     # db_uri = os.environ['DATABASE_URL'].replace("postgresql://", "cockroachdb://")
 
-DATABASE_URL = "cockroachdb://arch:JuA2azZYIbpUV11gLN0oIQ@arch-test1-3423.6xw.cockroachlabs.cloud:26257/defaultdb?sslmode=verify-full&sslrootcert=root.crt"
+DATABASE_URL = "cockroachdb://arch:FIRaA9qtcJH_Af2l7MDKqQ@arch-test1-3423.6xw.cockroachlabs.cloud:26257/defaultdb?sslmode=verify-full&sslrootcert=root.crt"
 db_uri = DATABASE_URL.replace("postgresql://", "cockroachdb://")
 
 try:
