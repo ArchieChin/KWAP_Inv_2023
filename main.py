@@ -47,7 +47,7 @@ deta = Deta("c0ky03c3_FeGypxDjVhTDCQU96cfUqLkstZLvo6Bb")
 db = deta.Base("database")
 
 st.title("KWAP 2023 Investment Retreat")
-st.subtitle("In Pursuit of Investment Returns and Portfolio Sustainability")
+st.subheader("In Pursuit of Investment Returns and Portfolio Sustainability")
 
 with st.form("my_form"):
     player = st.text_input('Enter your name')
