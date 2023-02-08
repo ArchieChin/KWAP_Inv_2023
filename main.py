@@ -16,8 +16,11 @@ st.subheader("Achieving long-term sustainable investment outcomes")
 if st.button("Click"):
     deta = Deta("c0ky03c3_FeGypxDjVhTDCQU96cfUqLkstZLvo6Bb")
     db = deta.Base("database")
-
-    fetch_res = fb.fetch()
+    
+    result = insert_entry("Arch", 1, 10, 15)
+    print(result)
+    
+    fetch_res = db.fetch()
 
     for item in fetch_res.items:
         print(item)
