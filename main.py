@@ -7,7 +7,7 @@ Created on Wed Feb  1 20:53:38 2023
 
 import requests
 import json
-
+import streamlit as st
 from deta import Deta
 
 def generate_entry(player, question, effort, carbon):
@@ -38,8 +38,11 @@ def is_entry_new(entry):
     else:
         return True
         
+        
 def compute_score(choice):
     return 10, 10
+
+
 deta = Deta("c0ky03c3_FeGypxDjVhTDCQU96cfUqLkstZLvo6Bb")
 db = deta.Base("database")
 
